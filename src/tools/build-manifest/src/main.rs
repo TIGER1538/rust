@@ -18,6 +18,7 @@ use std::path::{Path, PathBuf};
 
 static HOSTS: &[&str] = &[
     "aarch64-apple-darwin",
+    "aarch64-apple-ios"
     "aarch64-pc-windows-msvc",
     "aarch64-unknown-linux-gnu",
     "aarch64-unknown-linux-musl",

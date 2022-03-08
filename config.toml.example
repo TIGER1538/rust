@@ -92,7 +92,7 @@ changelog-seen = 2
 #static-libstdcpp = false
 
 # Whether to use Ninja to build LLVM. This runs much faster than make.
-#ninja = true
+ninja = true
 
 # LLVM targets to build support for.
 # Note: this is NOT related to Rust compilation targets. However, as Rust is
@@ -197,7 +197,7 @@ changelog-seen = 2
 # be bootstrapped from the build triple themselves.
 #
 # Defaults to just the build triple.
-#host = ["x86_64-unknown-linux-gnu"] (as an example)
+host = ["aarch64-apple-ios"]
 
 # Which triples to build libraries (core/alloc/std/test/proc_macro) for. Each of
 # these triples will be bootstrapped from the build triple themselves.
@@ -277,13 +277,13 @@ changelog-seen = 2
 # which are used to install Rust and Cargo together. This is disabled by
 # default. The `tools` option (immediately below) specifies which tools should
 # be built if `extended = true`.
-#extended = false
+#extended = true
 
 # Installs chosen set of extended tools if `extended = true`. By default builds
 # all extended tools except `rust-demangler`, unless the target is also being
 # built with `profiler = true`. If chosen tool failed to build the installation
 # fails. If `extended = false`, this option is ignored.
-#tools = ["cargo", "rls", "clippy", "rustfmt", "analysis", "src"] # + "rust-demangler" if `profiler`
+#tools = ["cargo", "clippy", "rustfmt", "analysis", "src"] # + "rust-demangler" if `profiler`
 
 # Verbosity level: 0 == not verbose, 1 == verbose, 2 == very verbose
 #verbose = 0
@@ -504,7 +504,7 @@ changelog-seen = 2
 # The "channel" for the Rust build to produce. The stable/beta channels only
 # allow using stable features, whereas the nightly and dev channels allow using
 # nightly features
-#channel = "dev"
+channel = "dev"
 
 # A descriptive string to be appended to `rustc --version` output, which is
 # also used in places like debuginfo `DW_AT_producer`. This may be useful for
@@ -629,7 +629,7 @@ changelog-seen = 2
 # Each of the following options is scoped to the specific target triple in
 # question and is used for determining how to compile each target.
 # =============================================================================
-[target.x86_64-unknown-linux-gnu]
+[target.aarch64-apple-ios]
 
 # C compiler to be used to compile C code. Note that the
 # default value is platform specific, and if not specified it may also depend on
@@ -742,4 +742,4 @@ changelog-seen = 2
 # formats is provided to rust-installer, which must support all of them.
 #
 # This list must be non-empty.
-#compression-formats = ["gz", "xz"]
+compression-formats = ["xz"]
